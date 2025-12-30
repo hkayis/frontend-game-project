@@ -1,3 +1,4 @@
+/*Alp: I fixed the problem where the new tile is put in the last deleted tiles location */
 const cover = document.getElementById("cover");
 const countdown = document.getElementById("countdown");
 const game = document.getElementById("game");
@@ -26,13 +27,13 @@ const endHiScoreEl = document.getElementById("endHiScore");
 let hiscore = Number(localStorage.getItem("hiscore")) || 0;
 hiscoreEl.textContent = hiscore;
 
-/* ---------- Cover ---------- */
+/* cover*/
 cover.addEventListener("click", () => {
   cover.classList.remove("active");
   startCountdown();
 });
 
-/* ---------- Countdown ---------- */
+/* cntdown*/
 function startCountdown() {
   countdown.classList.add("active");
   let n = 3;
@@ -50,7 +51,7 @@ function startCountdown() {
   }, 1000);
 }
 
-/* ---------- Game ---------- */
+/* game*/
 function startGame() {
   game.classList.add("active");
   gameActive = true;
@@ -87,17 +88,16 @@ function spawnInitialBlackTiles() {
 }
 
 
-function spawnOneBlackTile() {
+function spawnOneBlackTile(blockedIdx) {
   let idx;
   do {
     idx = Math.floor(Math.random() * 16);
-  } while (blackTiles.includes(idx));
+  } while (blackTiles.includes(idx) || idx === blockedIdx);
 
   blackTiles.push(idx);
   const cell = board.children[idx];
   cell.classList.add("black", "fade");
 }
-
 
 function renderBlackTiles() {
   [...board.children].forEach((cell, i) => {
@@ -133,12 +133,12 @@ if (!cell.classList.contains("cell")) return;
     cell.className = "cell";
   }, 300);
 
-  spawnOneBlackTile();
+  spawnOneBlackTile(idx);
   resetPointBar();
 });
 
 
-/* ---------- Point Bar ---------- */
+/* pointBAr*/
 function resetPointBar() {
   // Eski interval varsa kapat (asıl fix bu)
   if (pointIntervalId !== null) {
