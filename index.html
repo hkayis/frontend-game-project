@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tap The Black Tiles</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- COVER -->
+  <div id="cover" class="screen active">
+    <h1>Tap The Black Tiles</h1>
+    <p>Erka Kayis<br>CTIS 255</p>
+    <p class="hint">Click anywhere to start</p>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div id="countdown" class="screen">
+    <span id="countText">3</span>
+  </div>
+
+  <!-- GAME -->
+  <div id="game" class="screen">
+    <div class="top">
+      <div>HiScore: <span id="hiscore">0</span></div>
+      <div>Score: <span id="score">0</span></div>
+      <div>Time: <span id="time">10</span></div>
+    </div>
+
+    <p class="info">Tap the black tiles!</p>
+
+    <div id="board"></div>
+
+    <div class="point-bar">
+      <div id="pointFill"></div>
+    </div>
+  </div>
+
+  <!-- END -->
+  <div id="end" class="screen">
+  <h2 id="endText"></h2>
+  <p class="endScore">High Score: <span id="endHiScore">0</span></p>
+  <p class="restart">Press F5 to restart</p>
+</div>
+
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

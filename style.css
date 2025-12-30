@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f2f2f2;
+  height: 100vh;
+}
+
+.screen {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.hint {
+  opacity: 0.7;
+}
+
+/* Countdown */
+#countText {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+/* Game */
+.top {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.info {
+  margin: 10px 0;
+}
+
+#board {
+  width: 350px;              /* 4 hücre + boşluklara yetecek sabit genişlik */
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;                 /* hücreler arası boşluk */
+  justify-content: center;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.cell {
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.cell.black {
+  background: black;
+}
+
+.cell.hit {
+  background: #4caf50;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fade-in for new tiles */
+.fade {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* Point bar */
+.point-bar {
+  width: 320px;
+  height: 12px;
+  background: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#pointFill {
+  width: 100%;
+  height: 100%;
+  background: #2196f3;
+  transition: width 1s linear;
+}
+
+/* End */
+.restart {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}
