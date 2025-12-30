@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+   font-family: "Inter", sans-serif; 
+
 }
 
 body {
@@ -49,11 +50,11 @@ h1 {
 }
 
 #board {
-  width: 350px;              /* 4 hücre + boşluklara yetecek sabit genişlik */
+  width: 350px;              /*Alp: boşlukları salladım değiştirebilirsiniz belki %'yle yapmak daha iyi olur */
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;                 /* hücreler arası boşluk */
+  gap: 10px;                 
   justify-content: center;
 }
 
@@ -119,7 +120,7 @@ h1 {
   animation: blink 1s infinite;
 }
 
-@keyframes blink {
+@keyframes blink { 
   0% { opacity: 1 }
   50% { opacity: 0 }
   100% { opacity: 1 }
