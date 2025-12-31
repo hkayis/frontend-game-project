@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tap The Black Tiles</title>
+
+  <!-- google font whichs similar to discords font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- cover-->
+  <div id="cover" class="screen active">
+    <h1>Tap The Black Tiles</h1>
+    <div class="team">
+      <div class="member">
+        <img src="img/hako.jpg" alt="Hakan Kayis">
+        <div class="name">Hakan Kayis</div>
+        <div class="info">Section: 4</div>
+        <div class="info">ID: 223002011</div>
+      </div>
+    
+      <div class="member">
+        <img src="img/alp.jpg" alt="Alp Kavaklı">
+        <div class="name">Alp Kavaklı</div>
+        <div class="info">Section: 3</div>
+        <div class="info">ID: 22402450</div>
+      </div>
+    
+      <div class="member">
+        <img src="img/emre.jpg" alt="Emre Duygu">
+        <div class="name">Emre Duygu</div>
+        <div class="info">Section: 1</div>
+        <div class="info">ID: 22302622</div>
+      </div>
+    
+      <div class="course">CTIS 255</div>
+    </div>
+    
+    
+    <p class="hint">Click anywhere to start</p>
+  </div>
+
+  <!-- cntdown -->
+  <div id="countdown" class="screen">
+    <span id="countText">3</span>
+  </div>
+
+  <!-- game screen, values must be below the variables -->
+  <div id="game" class="screen">
+    <div class="top">
+      <div>HiScore: <!-- <br> --> <span id="hiscore">0</span></div>
+      <div>Score: <!-- <br> --> <span id="score">0</span></div>
+      <div>Time: <!-- <br>  --><span id="time">10</span></div>
+    </div>
+
+    <p class="info">Tap the black tiles!</p>
+
+    <div id="board"></div>
+
+    <div class="point-bar">
+      <div id="pointFill"></div>
+    </div>
+  </div>
+
+  <!-- end -->
+  <div id="end" class="screen">
+  <h2 id="endText"></h2>
+  <p class="endScore">High Score: <span id="endHiScore">0</span></p>
+  <p class="restart">Press F5 to restart</p>
+</div>
+
+
+  <!-- confetti (hoca asked for it) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

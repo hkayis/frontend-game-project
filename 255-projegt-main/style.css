@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+   font-family: "Inter", sans-serif; 
+
+}
+
+body {
+  margin: 0;
+  background: #f2f2f2;
+  height: 100vh;
+}
+
+.screen {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.hint {
+  opacity: 0.7;
+}
+
+/* Countdown */
+#countText {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+/* Game */
+.top {
+  display: flex;
+  gap: 50px;
+  font-weight: 600;
+  align-items: flex-start; /*Alp: Everythings upper should be in the same alignment bcz we changed the font sizes */
+  /* border: 3px solid red */;
+}
+
+.top > div{ /*Alp: Just wanted some gap  between names and stat variables */
+ display: flex;        
+  flex-direction: column;
+  gap: 6px;  
+}
+.top span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info {
+  margin: 10px 0;
+}
+
+#board {
+  width: 350px;              /*Alp: boşlukları salladım değiştirebilirsiniz belki %'yle yapmak daha iyi olur */
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;                 
+  justify-content: center;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.cell {
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.cell.black {
+  background: black;
+}
+
+.cell.hit {
+  background: #4caf50;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fade-in for new tiles */
+.fade {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* Point bar */
+.point-bar {
+  width: 320px;
+  height: 12px;
+  background: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#pointFill {
+  width: 100%;
+  height: 100%;
+  background: #2196f3;
+  transition: width 1s linear;
+}
+
+/* End */
+.restart {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink { 
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+
+
+/* Alp: I wanted the colors to be similar to the guide */
+#score {
+  color: #49e469;
+  font-size: 3em; 
+}
+
+#time {
+  color:  #ff535a;
+  font-size: 2em; 
+}
+
+.team{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.member{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 140px;
+}
+
+.member img{
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  border: 3px solid rgba(0,0,0,0.08);
+}
+
+.member .name{
+  font-weight: 600;
+}
+
+.course{
+  flex-basis: 100%;
+  margin-top: 10px;
+  opacity: 0.8;
+  font-weight: 600;
+}
